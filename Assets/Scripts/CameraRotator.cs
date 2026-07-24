@@ -9,7 +9,7 @@ public class CameraRotator : MonoBehaviour
 	private Transform _target;
 	[SerializeField, Min(0.1f)]
 	private float _speed = 1f;
-
+	public Transform Target;
 	private void Start()
 	{
 		StartCoroutine(Rotator());
