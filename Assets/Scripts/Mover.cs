@@ -3,34 +3,52 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
-	[SerializeField]
-	private float _moveTime = 1f;
-	[SerializeField]
-	private float _delayTime = 2f;
-	[SerializeField]
-	private Vector3[] _positions;
-	private Rigidbody _rb;
-	private IEnumerator Start()
-    {
-		_rb = GetComponent<Rigidbody>();
-		if(_positions.Length < 2) yield break;
-		int prev = 0, curr = 1;
-		var time = 0f;
-		var transform = this.transform;
-		while(true)
-		{
-			//transform.position = Vector3.Lerp(_positions[prev], _positions[curr], time / _moveTime);
-			_rb.MovePosition(Vector3.Lerp(_positions[prev], _positions[curr], time / _moveTime));
-			time += Time.deltaTime;
-			if(time >= _moveTime)
-			{
-				time = 0f;
-				prev = curr;
-				curr = (curr + 1) % _positions.Length;
-				yield return new WaitForSeconds(_delayTime);
-			}
+    [SerializeField] private Vector3 _start;
+    [SerializeField] private Vector3 _end;
+    [SerializeField] private float _speed = 2f;
+    [SerializeField] private float _delay = 1f;
 
-			yield return null;
-		}
+    private Rigidbody _rb;
+
+    private IEnumerator Start()
+    {
+        _rb = GetComponent<Rigidbody>();
+        yield return new WaitForFixedUpdate(); 
+
+        while (true)
+        {
+            yield return StartCoroutine(MoveBetween(_start, _end));
+            yield return StartCoroutine(MoveBetween(_end, _start));
+        }
+    }
+
+  private IEnumerator MoveBetween(Vector3 from, Vector3 to)
+{
+    float distance = Vector3.Distance(from, to);
+    float duration = distance / _speed;
+    float elapsed = 0f;
+
+    while (elapsed < duration)
+    {
+        float t = elapsed / duration;
+        Vector3 position = Vector3.Lerp(from, to, t);
+        _rb.MovePosition(position);
+        elapsed += Time.fixedDeltaTime;
+        yield return new WaitForFixedUpdate();
+    }
+
+    _rb.MovePosition(to);
+    yield return new WaitForSeconds(_delay);
+}
+
+	private void OnDrawGizmos()
+	{
+		if (Application.isPlaying) return;
+		Gizmos.color = Color.green;
+		Gizmos.DrawWireSphere(_start, 0.3f);
+		Gizmos.color = Color.red;
+		Gizmos.DrawWireSphere(_end, 0.3f);
+		Gizmos.color = Color.yellow;
+		Gizmos.DrawLine(_start, _end);
 	}
 }
