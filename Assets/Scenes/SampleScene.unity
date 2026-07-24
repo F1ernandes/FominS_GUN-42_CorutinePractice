@@ -453,6 +453,30 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: eff8cb9e87bde6a4bb54d5f568860943, type: 2}
     - target: {fileID: 5758257727941667339, guid: 466c5739dca48104d85ba5c247dfc97c, type: 3}
+      propertyPath: _end.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758257727941667339, guid: 466c5739dca48104d85ba5c247dfc97c, type: 3}
+      propertyPath: _end.z
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758257727941667339, guid: 466c5739dca48104d85ba5c247dfc97c, type: 3}
+      propertyPath: _speed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758257727941667339, guid: 466c5739dca48104d85ba5c247dfc97c, type: 3}
+      propertyPath: _start.x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758257727941667339, guid: 466c5739dca48104d85ba5c247dfc97c, type: 3}
+      propertyPath: _start.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758257727941667339, guid: 466c5739dca48104d85ba5c247dfc97c, type: 3}
+      propertyPath: _start.z
+      value: -25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758257727941667339, guid: 466c5739dca48104d85ba5c247dfc97c, type: 3}
       propertyPath: _positions.Array.data[0].x
       value: -10
       objectReference: {fileID: 0}
@@ -895,6 +919,30 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: eff8cb9e87bde6a4bb54d5f568860943, type: 2}
     - target: {fileID: 5758257727941667339, guid: 466c5739dca48104d85ba5c247dfc97c, type: 3}
+      propertyPath: _end.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758257727941667339, guid: 466c5739dca48104d85ba5c247dfc97c, type: 3}
+      propertyPath: _end.z
+      value: -23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758257727941667339, guid: 466c5739dca48104d85ba5c247dfc97c, type: 3}
+      propertyPath: _speed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758257727941667339, guid: 466c5739dca48104d85ba5c247dfc97c, type: 3}
+      propertyPath: _start.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758257727941667339, guid: 466c5739dca48104d85ba5c247dfc97c, type: 3}
+      propertyPath: _start.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758257727941667339, guid: 466c5739dca48104d85ba5c247dfc97c, type: 3}
+      propertyPath: _start.z
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758257727941667339, guid: 466c5739dca48104d85ba5c247dfc97c, type: 3}
       propertyPath: _moveTime
       value: 2.2
       objectReference: {fileID: 0}
@@ -1207,11 +1255,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d4e2e41c9d92940bec1f98b8ff97d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveTime: 3
-  _delayTime: 0
-  _positions:
-  - {x: -47, y: 0.75, z: -30}
-  - {x: -47, y: 0.75, z: 30}
+  _start: {x: -48, y: 2, z: -30}
+  _end: {x: -48, y: 2, z: 30}
+  _speed: 5
+  _delay: 1
 --- !u!114 &1459198135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1511,6 +1558,34 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: eff8cb9e87bde6a4bb54d5f568860943, type: 2}
+    - target: {fileID: 5758257727941667339, guid: 466c5739dca48104d85ba5c247dfc97c, type: 3}
+      propertyPath: _end.x
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758257727941667339, guid: 466c5739dca48104d85ba5c247dfc97c, type: 3}
+      propertyPath: _end.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758257727941667339, guid: 466c5739dca48104d85ba5c247dfc97c, type: 3}
+      propertyPath: _end.z
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758257727941667339, guid: 466c5739dca48104d85ba5c247dfc97c, type: 3}
+      propertyPath: _speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758257727941667339, guid: 466c5739dca48104d85ba5c247dfc97c, type: 3}
+      propertyPath: _start.x
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758257727941667339, guid: 466c5739dca48104d85ba5c247dfc97c, type: 3}
+      propertyPath: _start.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758257727941667339, guid: 466c5739dca48104d85ba5c247dfc97c, type: 3}
+      propertyPath: _start.z
+      value: -25
+      objectReference: {fileID: 0}
     - target: {fileID: 5758257727941667339, guid: 466c5739dca48104d85ba5c247dfc97c, type: 3}
       propertyPath: _moveTime
       value: 1
